@@ -33,3 +33,36 @@ print(df)
 
 df.pop('Sum')
 print(df)
+d = {
+    'one': pd.Series([1, 2, 3], index=['a', 'b', 'c']),
+    'two': pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])
+}
+
+d1 = {
+    'three': pd.Series([1, 2, 3, 4, 5, 6], index=['a', 'b', 'c', 'd', 'e', 'f']),
+    'four': pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])
+}
+df2 = pd.DataFrame(d1)
+df = pd.DataFrame(d)
+print(df)
+
+print(df.loc['b'])
+
+print(df.iloc[2])
+print(df.iloc[1:3])
+print(df[1:3])
+
+df = df.append(df2)
+print(df)
+
+df = df['one']
+print(df)
+
+df = pd.DataFrame([[1, 2], [3, 4]], columns=['a', 'b'])
+df2 = pd.DataFrame([[5, 6], [7, 8]], columns=['a', 'b'])
+df = df.append(df2)
+
+print(df)
+
+df = df.drop(0)
+print(df)
