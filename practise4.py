@@ -31,3 +31,6 @@ print(df.min())
 
 print(df.max())
 
+print(df.describe())
+
+print(df.describe(include='all'))
